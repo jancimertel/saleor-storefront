@@ -118,6 +118,7 @@ export const productDetailsQuery = gql`
       ...BasicProductFields
       ...ProductPricingField
       description
+      descriptionPlaintext
       category {
         id
         name
