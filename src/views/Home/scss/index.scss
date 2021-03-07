@@ -1,6 +1,7 @@
 @import "../../../globalStyles/scss/variables.scss";
 
 .home-page {
+  margin-top: $header-height;
   &__hero {
     background-color: $blue-overlay;
     background-blend-mode: multiply;

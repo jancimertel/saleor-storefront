@@ -1,7 +1,7 @@
 // colors
 export const autofillColor = "rgb(250, 255, 189)";
 export const autofillColorSelected = "rgb(232, 240, 254)";
-export const baseFontColor = "#323232";
+export const baseFontColor = "#1c1c1c";
 export const baseFontColorSemiTransparent = "rgba(50,50,50,0.6)";
 export const baseFontColorTransparent = "rgba(50,50,50,0.1)";
 export const black = "#323232";
@@ -17,6 +17,8 @@ export const grayLight = "#f1f5f5";
 export const green = "#3ed256";
 export const overlayColor = "rgba(199, 207, 207, 0.8)";
 export const rose = "#c22d74";
+export const orange = "#fd4646";
+export const orangeDark = "#b31b1b";
 export const turquoise = "#13bebb";
 export const turquoiseDark = "#06a09e";
 export const turquoiseLight = "rgba(6, 132, 123, 0.25)";
@@ -27,9 +29,11 @@ export const darkGreen = "#06847B";
 export const secondaryGrey = "#EBF1F6";
 export const secondaryGreyDark = "#9D9FB1";
 export const secondaryBlue = "#036DFF";
+export const globalBackground = "#f2f2f2";
 
 // theme colors
 export const theme = {
+  background: globalBackground,
   activeMenuOption: darkGreen,
   autofill: autofillColor,
   autofillSelected: autofillColorSelected,
@@ -50,8 +54,8 @@ export const theme = {
   listAttributeName: baseFontColorSemiTransparent,
   listBullet: darkGreen,
   overlay: overlayColor,
-  primary: turquoise,
-  primaryDark: turquoiseDark,
+  primary: orange,
+  primaryDark: orangeDark,
   primaryLight: turquoiseLight,
   primaryTransparent: turquoiseTransparent,
   secondary: blue,
@@ -81,6 +85,7 @@ export const h4FontSize = "1.125rem"; // 18px
 export const labelFontSize = "0.75rem"; // 12px
 export const smallFontSize = "0.875rem"; // 14px
 export const ultraBigFont = "6rem"; // 96px
+export const headerHeight = "68px";
 
 // spacing
 export const spacer = 1; // rem

@@ -3,7 +3,7 @@ import Link from "next/link";
 import * as React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 
-import { Button, Loader, ProductsFeatured } from "../../components";
+import { ProductsFeatured } from "../../components";
 import { structuredData } from "../../core/SEO/Homepage/structuredData";
 import { generateCategoryUrl } from "../../core/utils";
 import noPhotoImg from "../../images/no-photo.svg";
@@ -25,57 +25,12 @@ const Page: React.FC<{
     return categories && categories.edges && categories.edges.length > 0;
   };
   const intl = useIntl();
-
   return (
     <>
       <script className="structured-data-list" type="application/ld+json">
         {structuredData(shop)}
       </script>
-      <div
-        className="home-page__hero"
-        style={
-          backgroundImage
-            ? { backgroundImage: `url(${backgroundImage.url})` }
-            : null
-        }
-      >
-        <div className="home-page__hero-text">
-          <div>
-            <span className="home-page__hero__title">
-              <h1>
-                <FormattedMessage defaultMessage="Final reduction" />
-              </h1>
-            </span>
-          </div>
-          <div>
-            <span className="home-page__hero__title">
-              <h1>
-                <FormattedMessage defaultMessage="Up to 70% off sale" />
-              </h1>
-            </span>
-          </div>
-        </div>
-        <div className="home-page__hero-action">
-          {loading && !categories ? (
-            <Loader />
-          ) : (
-            categoriesExist() && (
-              <Link
-                href={generateCategoryUrl(
-                  categories.edges[0].node.id,
-                  categories.edges[0].node.name
-                )}
-              >
-                <a>
-                  <Button testingContext="homepageHeroActionButton">
-                    <FormattedMessage defaultMessage="Shop sale" />
-                  </Button>
-                </a>
-              </Link>
-            )
-          )}
-        </div>
-      </div>
+
       <ProductsFeatured
         title={intl.formatMessage({ defaultMessage: "Featured" })}
       />

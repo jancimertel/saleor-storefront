@@ -3,7 +3,7 @@ import * as React from "react";
 
 import { Thumbnail } from "@components/molecules";
 
-import { generateProductUrl } from "@temp/core/utils";
+import { generateProductUrl } from "../../core/utils";
 import { SearchResults_products_edges } from "./gqlTypes/SearchResults";
 
 const ProductItem: React.FC<SearchResults_products_edges> = ({

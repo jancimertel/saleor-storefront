@@ -26,11 +26,8 @@ export const Tile = styled.div`
 
 export const Navigation = styled(Tile)``;
 
-export const Center = styled.div`
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+export const Left = styled.div`
+  align-content: flex-start;
 `;
 
 export const Actions = styled(Tile)`
@@ -39,16 +36,17 @@ export const Actions = styled(Tile)`
 
 export const LogoWrapper = styled(ReactSVG)`
   line-height: 0;
+  max-height: 100%;
 
   svg {
     width: 6rem;
 
     ${media.largeScreen`
-      width: 4rem;
+      width: 10rem;
     `}
 
     ${media.largeScreen`
-      height: 30px;
+      height: 50px;
     `}
   }
 `;

@@ -73,7 +73,7 @@ export const defaultTheme = {
     ...C.theme,
   },
   container: {
-    width: 1140,
+    width: 1200,
   },
   demoBanner: {
     height: "60px",
