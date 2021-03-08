@@ -43,6 +43,7 @@
     "editorjs-inline-tool": "^0.4.0",
     "formik": "^2.2.6",
     "fs-extra": "^9.0.1",
+    "gifsicle": "^5.2.0",
     "graphql": "^14.5.8",
     "graphql-tag": "^2.10.3",
     "history": "^4.7.2",

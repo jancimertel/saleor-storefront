@@ -1,12 +1,11 @@
 import gql from "graphql-tag";
 
+import { TypedQuery } from "../../core/queries";
+import { MainMenu } from "./gqlTypes/MainMenu";
 import {
   SearchResults,
   SearchResultsVariables,
-} from "@temp/components/OverlayManager/Search/gqlTypes/SearchResults";
-
-import { TypedQuery } from "../../core/queries";
-import { MainMenu } from "./gqlTypes/MainMenu";
+} from "./gqlTypes/SearchResults";
 
 export const mainMenu = gql`
   fragment MainMenuSubItem on MenuItem {
