@@ -1,30 +1,23 @@
 import gql from "graphql-tag";
 
-import { TypedQuery } from "../../core/queries";
-import {
-  basicProductFragment,
-  productPricingFragment,
-} from "../../views/Product/queries";
-import {
-  FeaturedProducts,
-  FeaturedProductsVariables,
-} from "./gqlTypes/FeaturedProducts";
+import { Collection_attributes_edges } from "@temp/views/Collection/gqlTypes/Collection";
 
-export const featuredProducts = gql`
-  ${basicProductFragment}
-  ${productPricingFragment}
+import { TypedQuery } from "../../core/queries";
+
+export const getCollections = gql`
   query FeaturedProducts($channel: String) {
-    collection(slug: "featured-products", channel: $channel) {
-      name
-      products(first: 20) {
-        edges {
-          node {
-            ...BasicProductFields
-            ...ProductPricingField
-            category {
-              id
-              name
-            }
+    collections(first: 0, last: 100, channel: $channel) {
+      edges {
+        node {
+          id
+          name
+          backgroundImage {
+            url
+            alt
+          }
+          metadata {
+            key
+            value
           }
         }
       }
@@ -33,6 +26,10 @@ export const featuredProducts = gql`
 `;
 
 export const TypedFeaturedProductsQuery = TypedQuery<
-  FeaturedProducts,
-  FeaturedProductsVariables
->(featuredProducts);
+  {
+    collections: {
+      edges: Collection_attributes_edges[];
+    };
+  },
+  null
+>(getCollections);

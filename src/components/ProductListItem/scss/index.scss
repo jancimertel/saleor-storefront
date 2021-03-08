@@ -2,6 +2,8 @@
 
 .product-list-item {
   text-align: center;
+  background: $white;
+  padding: $spacer;
 
   &__title {
     text-transform: $product-item-title-text-transform;
@@ -29,9 +31,8 @@
   }
 
   &__image {
-    background-color: $turquoise-light;
     display: flex;
-    height: 350px;
+    height: 250px;
     justify-content: center;
 
     img {

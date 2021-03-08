@@ -10,6 +10,8 @@ import {
 import { FetchResult } from "react-apollo";
 import { UrlObject } from "url";
 
+import { MetadataItem } from "@temp/gql/collections";
+
 import { OrderDirection, ProductOrderField } from "../../gqlTypes/globalTypes";
 import { IFilterAttributes } from "../@next/types";
 import { FormError } from "./types";
@@ -162,6 +164,16 @@ export const updateQueryString = (
     }
     history.replace(`?${stringifyQs(querystring)}`);
   };
+};
+
+export const getMetadataValue = (name: string, metadata: MetadataItem[]) => {
+  let val: string = "";
+  metadata.forEach(item => {
+    if (item.key === name) {
+      val = item.value;
+    }
+  });
+  return val;
 };
 
 export const findFormErrors = (result: void | FetchResult): FormError[] => {

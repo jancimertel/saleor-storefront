@@ -6,6 +6,8 @@
 // GraphQL query operation: Collection
 // ====================================================
 
+import { MetadataItem } from "@temp/gql/collections";
+
 export interface Collection_collection_backgroundImage {
   __typename: "Image";
   /**
@@ -25,6 +27,8 @@ export interface Collection_collection {
   seoDescription: string | null;
   seoTitle: string | null;
   backgroundImage: Collection_collection_backgroundImage | null;
+  metadata: MetadataItem[] | null;
+  privateMetadata: MetadataItem[] | null;
 }
 
 export interface Collection_attributes_edges_node_values {
@@ -57,6 +61,9 @@ export interface Collection_attributes_edges_node {
    * Internal representation of an attribute name.
    */
   slug: string | null;
+
+  metadata: MetadataItem[] | null;
+  backgroundImage: Collection_collection_backgroundImage | null;
   /**
    * List of attribute's values.
    */

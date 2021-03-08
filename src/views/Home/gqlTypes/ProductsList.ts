@@ -50,6 +50,7 @@ export interface ProductsList_categories_edges_node {
    */
   id: string;
   name: string;
+  children?: ProductsList_categories;
   backgroundImage: ProductsList_categories_edges_node_backgroundImage | null;
 }
 

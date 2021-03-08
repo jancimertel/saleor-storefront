@@ -1,56 +1,51 @@
 import Link from "next/link";
 import * as React from "react";
 
-import { channelSlug } from "@temp/constants";
+import { getMetadataValue } from "@temp/core/utils";
+import { generateCollectionUrl } from "@utils/core";
 
-import { generateProductUrl } from "../../core/utils";
-import { Carousel, ProductListItem } from "..";
 import { TypedFeaturedProductsQuery } from "./queries";
 
 import "./scss/index.scss";
 
-interface ProductsFeaturedProps {
-  title?: string;
-}
-
-const ProductsFeatured: React.FC<ProductsFeaturedProps> = ({ title }) => {
+const ProductsFeatured: React.FC = () => {
   return (
-    <TypedFeaturedProductsQuery
-      displayError={false}
-      variables={{ channel: channelSlug }}
-    >
+    <TypedFeaturedProductsQuery displayError>
       {({ data }) => {
-        const products = data.collection?.products?.edges || [];
-
-        if (products.length) {
+        if (data.collections.edges.length) {
           return (
             <div className="products-featured">
-              <div className="container">
-                <h3>{title}</h3>
-                <Carousel>
-                  {products.map(({ node: product }) => (
+              {data.collections.edges.map(({ node: collection }) => {
+                const isImportant = getMetadataValue(
+                  "important",
+                  collection.metadata
+                );
+
+                if (isImportant) {
+                  return (
                     <Link
-                      href={generateProductUrl(product.id, product.name)}
-                      key={product.id}
+                      key={collection.id}
+                      href={generateCollectionUrl(
+                        collection.id,
+                        collection.name
+                      )}
                     >
                       <a>
-                        <ProductListItem product={product} />
+                        <img
+                          alt={collection.name}
+                          src={collection.backgroundImage.url}
+                        />
                       </a>
                     </Link>
-                  ))}
-                </Carousel>
-              </div>
+                  );
+                }
+              })}
             </div>
           );
         }
-        return null;
       }}
     </TypedFeaturedProductsQuery>
   );
-};
-
-ProductsFeatured.defaultProps = {
-  title: "Featured",
 };
 
 export default ProductsFeatured;

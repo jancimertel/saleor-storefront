@@ -1,72 +1,18 @@
 @import "../../../globalStyles/scss/variables.scss";
 
 .home-page {
-  margin-top: $header-height;
   &__hero {
-    background-color: $blue-overlay;
-    background-blend-mode: multiply;
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    padding: 12rem 0;
-
-    &-text {
-      overflow: hidden;
-    }
-
-    @media (max-width: $small-screen) {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      height: calc(100vh - 56px);
-      justify-content: space-between;
-      padding: $spacer;
-
-      &-text {
-        margin-top: $spacer * 5;
-        width: 100%;
-      }
-
-      &-action {
-        margin-bottom: $spacer * 3;
-        width: 100%;
-      }
-    }
-
-    &__title {
-      background-color: $white;
-      display: inline-block;
-      transform: skew(45deg);
-      padding: $spacer $spacer * 3;
-      margin-bottom: $spacer / 2;
-
-      @media (max-width: $small-screen) {
-        padding: 0.6rem $spacer;
-        width: calc(100% - 4rem);
-      }
-
-      h1 {
-        display: inline-block;
-        transform: skew(-45deg);
-        font-weight: $bold-font-weight;
-        text-transform: uppercase;
-        color: $blue;
-        font-size: $h1-font-size;
-        font-weight: 900;
-
-        @media (max-width: $small-screen) {
-          font-size: $h4-font-size;
-        }
-
-        @media (min-width: $small-screen) and (max-width: $medium-screen) {
-          font-size: 48px;
-        }
-      }
-    }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
   }
 
   &__categories {
     margin-bottom: 2rem;
+    margin-right: 1rem;
+    border: 1px solid $gray;
+    background: $white;
+    border-top: none;
 
     h3 {
       text-transform: uppercase;
@@ -75,27 +21,31 @@
     }
 
     &__list {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-gap: 2rem;
+      width: 300px;
+
+      li{
+        overflow: hidden;
+        border-bottom: 1px solid $gray-dark;
+
+        &:last-child{
+          border-bottom: none;
+        }
+      }
 
       @media (min-width: $small-screen) {
-        grid-template-columns: 1fr 1fr;
 
-        > div {
-          &:nth-child(3) {
-            grid-column: 3 / 1;
-          }
-
-          &:nth-child(n + 4) {
-            display: none;
-          }
-        }
       }
 
       a {
         text-decoration: none;
         color: $base-font-color;
+        padding: 0.6rem 1rem;
+        display: block;
+        text-transform: capitalize;
+
+        &:hover{
+          background: $gray-light;
+        }
 
         h3 {
           text-transform: uppercase;
@@ -123,6 +73,16 @@
           background-size: contain;
         }
       }
+    }
+  }
+
+  .title-offer{
+    display: flex;
+    flex-direction: row;
+
+    .container{
+      z-index: 2;
+      position: relative;
     }
   }
 }

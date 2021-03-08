@@ -18,6 +18,7 @@ interface CarouselType extends CarouselProps {
 const Carousel: React.FC<CarouselType> = ({ children, ...rest }) => {
   const settings = {
     className: "carousel",
+    cellSpacing: 0,
     renderBottomCenterControls: () => null,
     renderCenterLeftControls: ({ previousSlide, currentSlide }) =>
       currentSlide !== 0 ? (

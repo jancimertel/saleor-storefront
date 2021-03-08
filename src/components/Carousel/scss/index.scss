@@ -1,10 +1,20 @@
 @import "../../../globalStyles/scss/variables.scss";
 
 .carousel {
+  .slider-frame{
+    display: flex;
+    flex-direction: row;
+
+    ul{
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
   &__control {
     padding: $carousel-control-padding;
     background-color: $white;
-    box-shadow: $carousel-control-shadow;
 
     &:hover {
       cursor: pointer;
@@ -18,7 +28,6 @@
       }
 
       svg {
-        transform: rotate(180deg);
         margin-top: 0.5rem;
       }
     }
@@ -31,6 +40,7 @@
       }
 
       svg {
+        transform: rotate(180deg);
         margin-top: 0.4rem;
       }
     }
