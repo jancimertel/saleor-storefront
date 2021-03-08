@@ -12,9 +12,9 @@ import ReactSVG from "react-svg";
 import { OfflinePlaceholder } from "@components/atoms";
 import { paths } from "@paths";
 import { channelSlug } from "@temp/constants";
+import { maybe } from "@temp/core/utils";
 import { commonMessages } from "@temp/intl";
 
-import { maybe } from "../../../core/utils";
 import searchImg from "../../../images/search.svg";
 import closeImg from "../../../images/x.svg";
 import {
@@ -109,7 +109,9 @@ class Search extends React.Component<SearchProps, SearchState> {
                 <ReactSVG
                   path={closeImg}
                   onClick={this.props.overlay.hide}
-                  className="search__input__close-btn"
+                  className={classNames("search__input__close-btn", {
+                    "search__input__close-btn--visible": this.hasSearchPhrase,
+                  })}
                 />
               }
               iconRight={<ReactSVG path={searchImg} />}

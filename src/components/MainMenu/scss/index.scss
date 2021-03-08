@@ -18,7 +18,7 @@ $drawer-width: 25rem;
   z-index: 999;
   padding: 0.5rem 1rem;
 
-  .container{
+  .container {
     align-items: stretch;
     display: flex;
     flex-direction: row;
@@ -206,6 +206,7 @@ $drawer-width: 25rem;
 
     &:hover {
       color: $rose;
+
       svg * {
         fill: $rose;
       }
@@ -222,7 +223,7 @@ $drawer-width: 25rem;
       vertical-align: bottom;
     }
 
-    form{
+    form {
       width: 100%;
     }
   }
@@ -274,6 +275,7 @@ $drawer-width: 25rem;
           padding-bottom: 9px;
           margin-bottom: 3px;
         }
+
         > ul > li:first-child {
           position: relative;
 
@@ -326,7 +328,7 @@ $drawer-width: 25rem;
   &__input {
     .input__icon-right {
       svg * {
-        fill: $turquoise;
+        fill: $rose;
       }
     }
 
@@ -342,17 +344,25 @@ $drawer-width: 25rem;
       padding-bottom: 1.2rem;
       padding-top: 1rem;
       width: 100%;
-      box-shadow: inset 0px 0px 1px 0px rgba(0,0,0,0.35);
+      box-shadow: inset 0px 0px 1px 0px rgba(0, 0, 0, 0.35);
       transition: box-shadow 0.3s ease-in-out;
 
       &:focus, &:active {
-        box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.24);
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.24);
       }
 
       &::placeholder {
         text-transform: uppercase;
         font-size: $base-font-size;
         color: $gray-dark;
+      }
+    }
+
+    &__close-btn {
+      display: none;
+
+      &--visible {
+        display: block;
       }
     }
   }
@@ -364,9 +374,10 @@ $drawer-width: 25rem;
     transition: 300ms;
     display: none;
     max-height: 80vh;
-    box-shadow: 0px 5px 7px 0px rgba(0,0,0,0.24);;
+    box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.24);;
     border: 1px solid $gray-dark;
-    > ul{
+
+    > ul {
       max-height: 500px;
       overflow: auto;
     }
@@ -387,7 +398,7 @@ $drawer-width: 25rem;
     &__item {
       padding: $spacer / 2 $spacer;
 
-      a{
+      a {
         display: flex;
         flex-direction: row;
       }

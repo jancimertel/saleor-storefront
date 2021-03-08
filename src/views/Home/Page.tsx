@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import Link from "next/link";
 import * as React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
@@ -6,7 +5,6 @@ import { FormattedMessage, useIntl } from "react-intl";
 import { ProductsFeatured } from "../../components";
 import { structuredData } from "../../core/SEO/Homepage/structuredData";
 import { generateCategoryUrl } from "../../core/utils";
-import noPhotoImg from "../../images/no-photo.svg";
 import {
   ProductsList_categories,
   ProductsList_collection_backgroundImage,
@@ -48,21 +46,6 @@ const Page: React.FC<{
                     key={category.id}
                   >
                     <a>
-                      <div
-                        className={classNames(
-                          "home-page__categories__list__image",
-                          {
-                            "home-page__categories__list__image--no-photo": !category.backgroundImage,
-                          }
-                        )}
-                        style={{
-                          backgroundImage: `url(${
-                            category.backgroundImage
-                              ? category.backgroundImage.url
-                              : noPhotoImg
-                          })`,
-                        }}
-                      />
                       <h3>{category.name}</h3>
                     </a>
                   </Link>

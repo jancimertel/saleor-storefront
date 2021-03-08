@@ -38,6 +38,8 @@ interface SearchState {
 class Search extends React.Component<SearchProps, SearchState> {
   state = { search: "" };
 
+  searchField = null;
+
   submitBtnRef = React.createRef<HTMLButtonElement>();
 
   componentDidUpdate(_prevProps: SearchProps, prevState: SearchState) {
@@ -91,8 +93,10 @@ class Search extends React.Component<SearchProps, SearchState> {
             iconLeft={
               <ReactSVG
                 path={closeImg}
+                className={classNames("search__input__close-btn", {
+                  "search__input__close-btn--visible": this.hasSearchPhrase,
+                })}
                 onClick={this.clearResults}
-                className="search__input__close-btn"
               />
             }
             iconRight={<ReactSVG path={searchImg} />}
