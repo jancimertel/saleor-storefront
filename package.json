@@ -74,6 +74,7 @@
     "react-transition-group": "^4.4.1",
     "register-service-worker": "^1.7.2",
     "reset-css": "^4.0.1",
+    "sharp": "^0.27.2",
     "styled-components": "^4.3.0",
     "typeface-montserrat": "0.0.54",
     "url-join": "^4.0.0",
@@ -95,10 +96,10 @@
     "@babel/preset-typescript": "^7.3.3",
     "@hot-loader/react-dom": "^16.9.0",
     "@storybook/addon-actions": "^6.0.28",
-    "@storybook/addon-essentials": "^6.0.28",
-    "@storybook/addon-storyshots": "^6.0.28",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-storyshots": "^6.1.21",
     "@storybook/cli": "^6.0.28",
-    "@storybook/react": "^6.0.28",
+    "@storybook/react": "^6.1.21",
     "@storybook/theming": "^6.0.28",
     "@types/braintree-web": "^3.47.0",
     "@types/classnames": "^2.2.6",
@@ -184,7 +185,7 @@
     "workbox-webpack-plugin": "^6.0.2"
   },
   "engines": {
-    "node": ">=12 <15"
+    "node": ">=12 <14"
   },
   "husky": {
     "hooks": {
