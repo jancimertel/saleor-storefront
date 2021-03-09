@@ -8,7 +8,7 @@ import { TypedFeaturedProductsQuery } from "./queries";
 
 import "./scss/index.scss";
 
-const ProductsFeatured: React.FC = () => {
+const ProductsFeatured: React.FC<{ title?: any }> = () => {
   return (
     <TypedFeaturedProductsQuery displayError>
       {({ data }) => {

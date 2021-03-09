@@ -24,16 +24,14 @@ const CategorylistToMegamenu = (categories: ProductsList_categories) => {
         </Link>
       ),
       key: item.node.id,
-      items: Megamenu({ categories: item.node.children }),
+      items: Megamenu({ categories: (item.node as any).children }),
     });
   });
   return val;
 };
 
 const Megamenu: React.FC<MegamenuProps> = ({ categories, ...rest }) => (
-  <div
-    className="megamenu-list"
-  >
+  <div className="megamenu-list">
     <ReactMegaMenu
       tolerance={100}
       direction="RIGHT"
@@ -47,7 +45,7 @@ const Megamenu: React.FC<MegamenuProps> = ({ categories, ...rest }) => (
         },
         contentProps: {
           style: {
-            width: "auto"
+            width: "auto",
           },
         },
         menuItemProps: {

@@ -39,7 +39,7 @@ export const ProductFilters: React.FC<ProductFiltersProps> = ({
   <div className="product-filters">
     <div className="container">
       <div className="product-filters__grid">
-        {attributes.map(attribute => (
+        {(attributes as any).map(attribute => (
           <div key={attribute.id} className="product-filters__grid__filter">
             <SelectField
               value={
