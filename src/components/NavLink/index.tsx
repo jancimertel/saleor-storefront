@@ -10,8 +10,8 @@ import {
   SecondaryMenu_menu_items,
   SecondaryMenu_menu_items_children,
 } from "../Footer/gqlTypes/SecondaryMenu";
-import { MainMenu_menu_items } from "../MainMenu/gqlTypes/MainMenu";
-import { MainMenuSubItem } from "../MainMenu/gqlTypes/MainMenuSubItem";
+import { MainMenu_menu_items } from "../Search/gqlTypes/MainMenu";
+import { MainMenuSubItem } from "../Search/gqlTypes/MainMenuSubItem";
 
 interface NavLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   item:

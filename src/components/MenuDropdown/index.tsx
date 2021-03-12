@@ -1,8 +1,6 @@
 /* eslint-disable jsx-a11y/mouse-events-have-key-events */
 import * as React from "react";
 
-import "./scss/index.scss";
-
 class MenuDropdown extends React.Component<
   {
     head: React.ReactElement<{}>;

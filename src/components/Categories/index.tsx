@@ -5,8 +5,6 @@ import { generateCategoryUrl } from "@utils/core";
 
 import { TypedCategoryListQuery } from "./queries";
 
-import "./scss/index.scss";
-
 interface CategoryListProps {
   level?: number;
 }

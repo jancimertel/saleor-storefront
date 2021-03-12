@@ -16,8 +16,6 @@ import Page from "./Page";
 import { TypedProductDetailsQuery } from "./queries";
 import { IProps } from "./types";
 
-import "./scss/index.scss";
-
 const canDisplay = (product: ProductDetails_product) =>
   maybe(
     () =>

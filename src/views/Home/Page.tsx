@@ -10,8 +10,6 @@ import {
   ProductsList_shop,
 } from "./gqlTypes/ProductsList";
 
-import "./scss/index.scss";
-
 const Page: React.FC<{
   loading: boolean;
   categories: ProductsList_categories;

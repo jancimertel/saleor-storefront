@@ -9,8 +9,6 @@ import { paths } from "@paths";
 
 import { TypedAccountConfirmMutation } from "./queries";
 
-import "./scss/index.scss";
-
 const AccountConfirm: NextPage = () => {
   const [query] = useQueryParams({
     email: StringParam,

@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import React from "react";
 
 import { Loader } from "@components/atoms";
-import { demoMode } from "@temp/constants";
 
 import {
   Footer,
@@ -16,6 +15,7 @@ import ShopProvider from "../components/ShopProvider";
 import Notifications from "./Notifications";
 
 import "../globalStyles/scss/index.scss";
+import "react-bootstrap-typeahead/css/Typeahead.css";
 
 const App: React.FC = ({ children }) => {
   const { pathname } = useRouter();
@@ -29,7 +29,7 @@ const App: React.FC = ({ children }) => {
     <ShopProvider>
       <OverlayProvider pathname={pathname}>
         <MetaConsumer />
-        <MainMenu demoMode={demoMode} />
+        <MainMenu demoMode={false} />
         {children}
         <Footer />
         <OverlayManager />

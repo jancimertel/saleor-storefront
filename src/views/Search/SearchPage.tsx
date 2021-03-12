@@ -2,8 +2,6 @@ import * as React from "react";
 
 import { TextField } from "../../components";
 
-import "./scss/index.scss";
-
 interface SearchPageProps {
   query: string;
   onQueryChange: (event: React.ChangeEvent<HTMLInputElement>) => void;

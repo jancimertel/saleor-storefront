@@ -3,8 +3,6 @@ import * as React from "react";
 
 import { OverlayContextInterface } from "./context";
 
-import "./scss/index.scss";
-
 interface OverlayProps {
   context: OverlayContextInterface;
   className?: string;

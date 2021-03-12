@@ -50,10 +50,10 @@ const notificationConfig = { position: positions.BOTTOM_RIGHT, timeout: 2500 };
 const App = ({ Component, pageProps }: AppProps) => (
   <>
     <Head>
-      <title>Demo PWA Storefront – Saleor Commerce</title>
+      <title>Bagio</title>
       <link rel="preconnect" href={apiUrl} />
       <link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
-      <link rel="icon" type="image/png" href="/favicon-36.png" />
+      <link rel="icon" type="image/png" href="/favicon-32x32.png" />
       <link rel="manifest" href="/manifest.json" />
     </Head>
     <ThemeProvider theme={defaultTheme}>

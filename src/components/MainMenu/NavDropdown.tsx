@@ -4,10 +4,8 @@ import classNames from "classnames";
 import * as React from "react";
 
 import { NavLink, OverlayContextInterface } from "..";
-import { MainMenu_menu_items } from "./gqlTypes/MainMenu";
+import { MainMenu_menu_items } from "../Search/gqlTypes/MainMenu";
 import NavItem from "./NavItem";
-
-import "./scss/index.scss";
 
 class NavDropdown extends React.PureComponent<
   MainMenu_menu_items & {

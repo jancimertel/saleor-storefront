@@ -5,8 +5,6 @@ import { ReactMegaMenu } from "react-mega-menu/lib";
 import { ProductsList_categories } from "@temp/views/Home/gqlTypes/ProductsList";
 import { generateCategoryUrl } from "@utils/core";
 
-import "./scss/index.scss";
-
 export interface MegamenuProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   categories: ProductsList_categories;

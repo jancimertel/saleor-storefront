@@ -2,8 +2,6 @@ import * as React from "react";
 
 import { FormError } from "../Form";
 
-import "./scss/index.scss";
-
 type Style = "white" | "grey";
 
 interface IClassNameArgs {

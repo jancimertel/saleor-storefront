@@ -4,7 +4,7 @@ import * as React from "react";
 import { Thumbnail } from "@components/molecules";
 
 import { generateProductUrl } from "../../core/utils";
-import { SearchResults_products_edges } from "./gqlTypes/SearchResults";
+import { SearchResults_products_edges } from "../Search/gqlTypes/SearchResults";
 
 const ProductItem: React.FC<SearchResults_products_edges> = ({
   node: product,

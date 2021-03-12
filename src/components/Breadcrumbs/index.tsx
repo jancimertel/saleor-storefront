@@ -2,16 +2,12 @@ import classNames from "classnames";
 import Link from "next/link";
 import * as React from "react";
 import { FormattedMessage } from "react-intl";
-import Media from "react-media";
 
 import { paths } from "@paths";
 import { commonMessages } from "@temp/intl";
 
 import { getDBIdFromGraphqlId, slugify } from "../../core/utils";
 import { Category_category } from "../../views/Category/gqlTypes/Category";
-
-import "./scss/index.scss";
-import { smallScreen } from "../../globalStyles/scss/variables.scss";
 
 export interface Breadcrumb {
   value: string;
@@ -45,11 +41,7 @@ const getBackLink = (breadcrumbs: Breadcrumb[]) =>
 const Breadcrumbs: React.FC<{
   breadcrumbs: Breadcrumb[];
 }> = ({ breadcrumbs }) => (
-  <Media
-    query={{
-      minWidth: smallScreen,
-    }}
-  >
+  <>
     {matches =>
       matches ? (
         <ul className="breadcrumbs">
@@ -83,7 +75,7 @@ const Breadcrumbs: React.FC<{
         </div>
       )
     }
-  </Media>
+  </>
 );
 
 export default Breadcrumbs;

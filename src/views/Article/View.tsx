@@ -11,8 +11,6 @@ import { Article_collection } from "./gqlTypes/Article";
 import Page from "./Page";
 import { TypedArticleQuery } from "./query";
 
-import "./scss/index.scss";
-
 const canDisplay = page =>
   maybe(() => !!page && !!page.title && !!page.content);
 const getHeaderImage = (collection: Article_collection) =>

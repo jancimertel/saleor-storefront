@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import React from "react";
-import Media from "react-media";
 
 import { ProductDescription } from "@components/molecules";
 import { ProductGallery } from "@components/organisms";
@@ -17,8 +16,6 @@ import { generateCategoryUrl, generateProductUrl } from "../../core/utils";
 import GalleryCarousel from "./GalleryCarousel";
 import OtherProducts from "./Other";
 import { IProps } from "./types";
-
-import { smallScreen } from "../../globalStyles/scss/variables.scss";
 
 const populateBreadcrumbs = product => [
   {
@@ -89,7 +86,7 @@ const Page: React.FC<
           <script className="structured-data-list" type="application/ld+json">
             {structuredData(product)}
           </script>
-          <Media query={{ maxWidth: smallScreen }}>
+          <>
             {matches =>
               matches ? (
                 <>
@@ -118,7 +115,7 @@ const Page: React.FC<
                 </>
               )
             }
-          </Media>
+          </>
         </div>
       </div>
       <div className="container">

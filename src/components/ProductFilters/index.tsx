@@ -6,8 +6,6 @@ import { SearchProducts_attributes_edges_node } from "../../views/Search/gqlType
 import PriceRangeFilter from "../PriceRangeFilter";
 import SelectField, { SelectValue } from "../SelectField";
 
-import "./scss/index.scss";
-
 export interface AttributeList {
   [attributeSlug: string]: string[];
 }

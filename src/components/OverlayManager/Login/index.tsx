@@ -17,8 +17,6 @@ import {
 import ForgottenPassword from "./ForgottenPassword";
 import RegisterForm from "./RegisterForm";
 
-import "./scss/index.scss";
-
 class Login extends React.Component<
   { overlay: OverlayContextInterface; active?: "login" | "register" },
   { active: "login" | "register" }

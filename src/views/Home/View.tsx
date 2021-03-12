@@ -9,8 +9,6 @@ import { MetaWrapper } from "../../components";
 import Page from "./Page";
 import { TypedHomePageQuery } from "./queries";
 
-import "./scss/index.scss";
-
 const View: React.FC<NextPage> = () => {
   const { pathname, asPath, replace } = useRouter();
   const shouldRedirect = pathname === "/" && pathname !== asPath;

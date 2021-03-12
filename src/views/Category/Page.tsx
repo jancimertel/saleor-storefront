@@ -16,8 +16,6 @@ import { maybe } from "../../core/utils";
 import { Category_category } from "./gqlTypes/Category";
 import { CategoryProducts_products } from "./gqlTypes/CategoryProducts";
 
-import "./scss/index.scss";
-
 interface SortItem {
   label: string;
   value?: string;

@@ -11,8 +11,6 @@ import { DebounceChange, ProductsFeatured, TextField } from "../../components";
 import { maybe } from "../../core/utils";
 import { SearchProducts_products } from "./gqlTypes/SearchProducts";
 
-import "./scss/index.scss";
-
 interface SortItem {
   label: string;
   value?: string;

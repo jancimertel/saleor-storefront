@@ -5,8 +5,6 @@ import { channelSlug } from "@temp/constants";
 import { NavLink } from "..";
 import { TypedSecondaryMenuQuery } from "./queries";
 
-import "./scss/index.scss";
-
 class Nav extends React.PureComponent {
   render() {
     return (

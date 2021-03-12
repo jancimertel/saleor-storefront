@@ -29,6 +29,11 @@ module.exports = (nextConfig = {}, { nextComposePlugins, phase }) => ({
       },
       ...config.module.rules,
       {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: "javascript/auto",
+      },
+      {
         test: /\.svg$/,
         use: [
           {
@@ -67,7 +72,7 @@ module.exports = (nextConfig = {}, { nextComposePlugins, phase }) => ({
         react: path.resolve("./node_modules/react"),
         "react-dom": "@hot-loader/react-dom",
       },
-      extensions: [".ts", ".tsx", ".js", ".jsx"],
+      extensions: [".ts", ".tsx", ".js", ".jsx", ".mjs"],
       plugins: [
         new TsconfigPathsPlugin({
           configFile: "./tsconfig.json",

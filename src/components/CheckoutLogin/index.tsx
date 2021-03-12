@@ -10,8 +10,6 @@ import { OverlayTheme, OverlayType } from "../Overlay";
 import CheckoutAsGuest from "./CheckoutAsGuest";
 import SignInForm from "./SignInForm";
 
-import "./scss/index.scss";
-
 const CheckoutLogin: NextPage = () => {
   const overlay = useContext(OverlayContext);
   const { user } = useAuth();

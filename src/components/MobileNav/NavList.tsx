@@ -10,8 +10,6 @@ import backImg from "../../images/arrow-back.svg";
 import logoImg from "../../images/logo.svg";
 import NavItem, { INavItem } from "./NavItem";
 
-import "./scss/index.scss";
-
 interface NavListProps {
   items: INavItem[];
   hideOverlay(): void;
