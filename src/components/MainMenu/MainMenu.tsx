@@ -51,7 +51,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ demoMode }) => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse>
-          <Search className="mr-sm-2" placeholder="Search" />
+          <Search className="mr-sm-2" placeholder="Search" intl={null} />
         </Navbar.Collapse>
         <Navbar id="basic-navbar-nav">
           <Nav>

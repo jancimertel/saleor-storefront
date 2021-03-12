@@ -21,6 +21,7 @@ interface SearchProps extends WrappedComponentProps {
 }
 
 const Search: React.FC<SearchProps> = props => {
+  // @ts-ignore
   const [isLoading, setIsLoading] = useState(false);
   const [search, setSearch] = useState("");
 
