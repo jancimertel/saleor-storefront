@@ -8,6 +8,7 @@ import {
   Nav,
   Navbar,
   NavDropdown,
+  Row,
 } from "react-bootstrap";
 import { Basket as BacketIcon } from "react-bootstrap-icons";
 
@@ -81,32 +82,38 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
             className={classNames(className, {})}
           >
             <Container className="product-menu">
-              <Col xs={12} md={4} lg={3}>
-                <Nav>
-                  <DropdownButton
-                    size="lg"
-                    title="Choose a category"
-                    className="btn-block w-100"
-                    variant="dark"
-                    show={show}
-                    style={{ width: "100%" }}
-                  >
-                    {CategorylistToMegamenu(data, NavDropdown.Item, {}, true)}
-                  </DropdownButton>
-                </Nav>
-              </Col>
+              <Row style={{ width: "100%" }}>
+                <Col xs={12} md={4} lg={3}>
+                  <Nav>
+                    <DropdownButton
+                      size="lg"
+                      title="Choose a category"
+                      className="btn-block w-100"
+                      variant="dark"
+                      show={show}
+                      style={{ width: "100%" }}
+                    >
+                      {CategorylistToMegamenu(data, NavDropdown.Item, {}, true)}
+                    </DropdownButton>
+                  </Nav>
+                </Col>
 
-              <Col xs={12} md={8} lg={9}>
-                <Form inline className="mr-auto">
-                  <Search className="mr-sm-2" placeholder="Search" />
-                </Form>
-              </Col>
+                <Col xs={12} md={8} lg={9}>
+                  <Form inline className="mr-auto">
+                    <Search className="mr-sm-2" placeholder="Search" />
+                  </Form>
+                </Col>
+              </Row>
             </Container>
           </Navbar>
         );
       }}
     </TypedCategoriesQuery>
   );
+};
+
+ProductMenu.defaultProps = {
+  sticky: true,
 };
 
 export default ProductMenu;

@@ -16,6 +16,7 @@ import Notifications from "./Notifications";
 
 import "../globalStyles/scss/index.scss";
 import "react-bootstrap-typeahead/css/Typeahead.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 const App: React.FC = ({ children }) => {
   const { pathname } = useRouter();

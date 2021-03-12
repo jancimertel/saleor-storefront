@@ -1,0 +1,130 @@
+@font-face {
+    font-family: 'Cocogoose Pro';
+    src: url('CocogoosePro-UltraLightItalic.eot');
+    src: url('CocogoosePro-UltraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('CocogoosePro-UltraLightItalic.woff2') format('woff2'),
+        url('CocogoosePro-UltraLightItalic.woff') format('woff'),
+        url('CocogoosePro-UltraLightItalic.ttf') format('truetype'),
+        url('CocogoosePro-UltraLightItalic.svg#CocogoosePro-UltraLightItalic') format('svg');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cocogoose Pro SemiLight';
+    src: url('CocogoosePro-SemiLightItalic.eot');
+    src: url('CocogoosePro-SemiLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('CocogoosePro-SemiLightItalic.woff2') format('woff2'),
+        url('CocogoosePro-SemiLightItalic.woff') format('woff'),
+        url('CocogoosePro-SemiLightItalic.ttf') format('truetype'),
+        url('CocogoosePro-SemiLightItalic.svg#CocogoosePro-SemiLightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cocogoose Pro';
+    src: url('CocogoosePro-ThinItalic.eot');
+    src: url('CocogoosePro-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('CocogoosePro-ThinItalic.woff2') format('woff2'),
+        url('CocogoosePro-ThinItalic.woff') format('woff'),
+        url('CocogoosePro-ThinItalic.ttf') format('truetype'),
+        url('CocogoosePro-ThinItalic.svg#CocogoosePro-ThinItalic') format('svg');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'COCOGOOSE';
+    src: url('COCOGOOSE-DemiBold.eot');
+    src: url('COCOGOOSE-DemiBold.eot?#iefix') format('embedded-opentype'),
+        url('COCOGOOSE-DemiBold.woff2') format('woff2'),
+        url('COCOGOOSE-DemiBold.woff') format('woff'),
+        url('COCOGOOSE-DemiBold.ttf') format('truetype'),
+        url('COCOGOOSE-DemiBold.svg#COCOGOOSE-DemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'COCOGOOSE';
+    src: url('COCOGOOSE-UltraLight.eot');
+    src: url('COCOGOOSE-UltraLight.eot?#iefix') format('embedded-opentype'),
+        url('COCOGOOSE-UltraLight.woff2') format('woff2'),
+        url('COCOGOOSE-UltraLight.woff') format('woff'),
+        url('COCOGOOSE-UltraLight.ttf') format('truetype'),
+        url('COCOGOOSE-UltraLight.svg#COCOGOOSE-UltraLight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cocogoose Pro';
+    src: url('CocogoosePro-Thin.eot');
+    src: url('CocogoosePro-Thin.eot?#iefix') format('embedded-opentype'),
+        url('CocogoosePro-Thin.woff2') format('woff2'),
+        url('CocogoosePro-Thin.woff') format('woff'),
+        url('CocogoosePro-Thin.ttf') format('truetype'),
+        url('CocogoosePro-Thin.svg#CocogoosePro-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cocogoose Pro';
+    src: url('CocogoosePro-Italic.eot');
+    src: url('CocogoosePro-Italic.eot?#iefix') format('embedded-opentype'),
+        url('CocogoosePro-Italic.woff2') format('woff2'),
+        url('CocogoosePro-Italic.woff') format('woff'),
+        url('CocogoosePro-Italic.ttf') format('truetype'),
+        url('CocogoosePro-Italic.svg#CocogoosePro-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cocogoose Pro';
+    src: url('CocogoosePro-LightItalic.eot');
+    src: url('CocogoosePro-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('CocogoosePro-LightItalic.woff2') format('woff2'),
+        url('CocogoosePro-LightItalic.woff') format('woff'),
+        url('CocogoosePro-LightItalic.ttf') format('truetype'),
+        url('CocogoosePro-LightItalic.svg#CocogoosePro-LightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cocogoose';
+    src: url('Cocogoose.eot');
+    src: url('Cocogoose.eot?#iefix') format('embedded-opentype'),
+        url('Cocogoose.woff2') format('woff2'),
+        url('Cocogoose.woff') format('woff'),
+        url('Cocogoose.ttf') format('truetype'),
+        url('Cocogoose.svg#Cocogoose') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cocogoose';
+    src: url('Cocogoose-Light.eot');
+    src: url('Cocogoose-Light.eot?#iefix') format('embedded-opentype'),
+        url('Cocogoose-Light.woff2') format('woff2'),
+        url('Cocogoose-Light.woff') format('woff'),
+        url('Cocogoose-Light.ttf') format('truetype'),
+        url('Cocogoose-Light.svg#Cocogoose-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+

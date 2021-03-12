@@ -7,7 +7,6 @@ import { isEqual } from "lodash";
 import * as React from "react";
 
 import { TaxedMoney } from "../../containers";
-import * as S from "./styles";
 
 /**
  * Renders formatted price for chosen variant or product.
@@ -23,9 +22,9 @@ export const getProductPrice = (
     }
     return (
       <>
-        <S.UndiscountedPrice>
+        <div>
           <TaxedMoney taxedMoney={variantPricing.priceUndiscounted} />
-        </S.UndiscountedPrice>
+        </div>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <TaxedMoney taxedMoney={variantPricing.price} />
       </>

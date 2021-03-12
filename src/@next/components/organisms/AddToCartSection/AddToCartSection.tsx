@@ -5,20 +5,19 @@ import {
   ProductDetails_product_variants_pricing,
 } from "@saleor/sdk/lib/queries/gqlTypes/ProductDetails";
 import React, { useState } from "react";
+import { Alert, Container } from "react-bootstrap";
 import { useIntl } from "react-intl";
 
 import { commonMessages } from "@temp/intl";
 import { IProductVariantsAttributesSelectedValues } from "@types";
 
 import AddToCartButton from "../../molecules/AddToCartButton";
-import QuantityInput from "../../molecules/QuantityInput";
 import ProductVariantPicker from "../ProductVariantPicker";
 import {
   canAddToCart,
   getAvailableQuantity,
   getProductPrice,
 } from "./stockHelpers";
-import * as S from "./styles";
 
 const LOW_STOCK_QUANTITY: number = 5;
 
@@ -32,8 +31,11 @@ export interface IAddToCartSection {
   isAvailableForPurchase: boolean | null;
   availableForPurchase: string | null;
   variantId: string;
+
   setVariantId(variantId: string): void;
+
   onAddToCart(variantId: string, quantity?: number): void;
+
   onAttributeChangeHandler(slug: string | null, value: string): void;
 }
 
@@ -86,12 +88,7 @@ const AddToCartSection: React.FC<IAddToCartSection> = ({
   );
 
   const renderErrorMessage = (message: string, testingContextId: string) => (
-    <S.ErrorMessage
-      data-test="stockErrorMessage"
-      data-testId={testingContextId}
-    >
-      {message}
-    </S.ErrorMessage>
+    <Alert>{message}</Alert>
   );
 
   const onVariantPickerChange = (
@@ -110,17 +107,15 @@ const AddToCartSection: React.FC<IAddToCartSection> = ({
   };
 
   return (
-    <S.AddToCartSelection>
-      <S.ProductNameHeader data-test="productName">{name}</S.ProductNameHeader>
+    <Container>
+      <h2>{name}</h2>
       {isOutOfStock ? (
         renderErrorMessage(
           intl.formatMessage(commonMessages.outOfStock),
           "outOfStock"
         )
       ) : (
-        <S.ProductPricing>
-          {getProductPrice(productPricing, variantPricing)}
-        </S.ProductPricing>
+        <h3>{getProductPrice(productPricing, variantPricing)}</h3>
       )}
       {noPurchaseAvailable &&
         renderErrorMessage(
@@ -152,30 +147,18 @@ const AddToCartSection: React.FC<IAddToCartSection> = ({
           intl.formatMessage(commonMessages.noItemsAvailable),
           "noItemsAvailable"
         )}
-      <S.VariantPicker>
-        <ProductVariantPicker
-          productVariants={productVariants}
-          onChange={onVariantPickerChange}
-          selectSidebar
-          queryAttributes={queryAttributes}
-          onAttributeChangeHandler={onAttributeChangeHandler}
-        />
-      </S.VariantPicker>
-      <S.QuantityInput>
-        <QuantityInput
-          quantity={quantity}
-          maxQuantity={availableQuantity}
-          disabled={isOutOfStock || isNoItemsAvailable}
-          onQuantityChange={setQuantity}
-          hideErrors={!variantId || isOutOfStock || isNoItemsAvailable}
-          data-test="addToCartQuantity"
-        />
-      </S.QuantityInput>
+      <ProductVariantPicker
+        productVariants={productVariants}
+        onChange={onVariantPickerChange}
+        selectSidebar
+        queryAttributes={queryAttributes}
+        onAttributeChangeHandler={onAttributeChangeHandler}
+      />
       <AddToCartButton
         onSubmit={() => onAddToCart(variantId, quantity)}
         disabled={disableButton}
       />
-    </S.AddToCartSelection>
+    </Container>
   );
 };
 AddToCartSection.displayName = "AddToCartSection";

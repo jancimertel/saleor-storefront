@@ -38,7 +38,7 @@ const Breadcrumbs: React.FC<{
   breadcrumbs: Breadcrumb[];
 }> = ({ breadcrumbs }) => (
   <>
-    <BsBreadcrumb className="breadcrumbs">
+    <BsBreadcrumb className="breadcrumbs" style={{ background: "transparent" }}>
       <BsBreadcrumb.Item href={paths.home}>
         <FormattedMessage {...commonMessages.home} />
       </BsBreadcrumb.Item>

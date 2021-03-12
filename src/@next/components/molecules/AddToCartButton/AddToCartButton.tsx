@@ -12,12 +12,7 @@ export const AddToCartButton: React.FC<IAddToCartButton> = ({
   disabled,
 }) => {
   return (
-    <Button
-      data-test="addProductToCartButton"
-      onClick={onSubmit}
-      color="primary"
-      disabled={disabled}
-    >
+    <Button onClick={onSubmit} color="primary" size="lg" disabled={disabled}>
       <FormattedMessage defaultMessage="Add to basket" />
     </Button>
   );

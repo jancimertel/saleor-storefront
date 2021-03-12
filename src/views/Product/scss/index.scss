@@ -1,0 +1,15 @@
+@import "../../../globalStyles/scss/_variables";
+.product{
+  background: $white;
+
+  .slider{
+    img{
+      max-height: 500px;
+      width: auto;
+    }
+  }
+}
+
+.carousel .slide{
+  background: transparent;
+}
