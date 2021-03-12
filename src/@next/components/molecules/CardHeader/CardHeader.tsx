@@ -31,7 +31,7 @@ export const CardHeader: React.FC<IProps> = ({
           name="x"
           size={19}
           onClick={onHide}
-          testingContext="closeOverlayButton"
+          data-test="closeOverlayButton"
         />
       )}
       {closeIcon}

@@ -51,7 +51,7 @@ export const FilterSidebar: React.FC<IProps> = ({
             <FormattedMessage {...commonMessages.filterHeader} />
           </span>
           <IconButton
-            testingContext="hideFilters"
+            data-test="hideFilters"
             onClick={hide}
             name="x"
             size={18}

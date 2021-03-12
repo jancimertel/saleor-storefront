@@ -41,7 +41,7 @@ class Login extends React.Component<
     const { show, hide } = overlay;
 
     return (
-      <Overlay testingContext="loginOverlay" context={overlay}>
+      <Overlay data-test="loginOverlay" context={overlay}>
         <div className="login">
           <Online>
             <div className="overlay__header">

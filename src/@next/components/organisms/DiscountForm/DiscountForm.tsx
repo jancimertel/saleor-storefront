@@ -1,8 +1,9 @@
 import { Formik } from "formik";
 import React from "react";
+import { Button } from "react-bootstrap";
 import { FormattedMessage, useIntl } from "react-intl";
 
-import { Button, Chip, ErrorMessage, Input } from "@components/atoms";
+import { Chip, ErrorMessage, Input } from "@components/atoms";
 import { commonMessages } from "@temp/intl";
 
 import * as S from "./styles";
@@ -79,7 +80,7 @@ export const DiscountForm: React.FC<IProps> = ({
                 <S.ButtonWrapper>
                   <Button
                     type="button"
-                    testingContext="applyPromoCodeButton"
+                    data-test="applyPromoCodeButton"
                     onClick={() => handleApplyBtnClick(values.inputCode)}
                   >
                     <FormattedMessage defaultMessage="Apply" />

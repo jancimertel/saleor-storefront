@@ -9,7 +9,7 @@ interface OverlayProps {
   /**
    * Unique name used as selector for writing e2e tests in Cypress	   * Unique name used as selector for writing e2e tests in Cypress
    */
-  testingContext: string;
+  testingContext?: string;
 }
 
 const Overlay: React.FC<OverlayProps> = ({

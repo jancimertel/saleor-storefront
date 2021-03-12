@@ -1,12 +1,13 @@
 import * as React from "react";
+import { Container } from "react-bootstrap";
 import { useIntl } from "react-intl";
 
+import { ProductListHeader } from "@components/molecules";
+import { FilterSidebar, ProductList } from "@components/organisms";
+import { ProductMenu } from "@temp/components/MainMenu";
 import { commonMessages } from "@temp/intl";
 import { IFilterAttributes, IFilters } from "@types";
 
-import { ProductListHeader } from "../../@next/components/molecules";
-import { ProductList } from "../../@next/components/organisms";
-import { FilterSidebar } from "../../@next/components/organisms/FilterSidebar";
 import {
   Breadcrumbs,
   extractBreadcrumbs,
@@ -83,8 +84,9 @@ const Page: React.FC<PageProps> = ({
     );
 
   return (
-    <div className="category">
-      <div className="container">
+    <>
+      <ProductMenu sticky />
+      <Container className="category">
         <Breadcrumbs breadcrumbs={extractBreadcrumbs(category)} />
         <FilterSidebar
           show={showFilters}
@@ -112,14 +114,14 @@ const Page: React.FC<PageProps> = ({
             onLoadMore={onLoadMore}
           />
         )}
-      </div>
 
-      {!hasProducts && (
-        <ProductsFeatured
-          title={intl.formatMessage(commonMessages.youMightLike)}
-        />
-      )}
-    </div>
+        {!hasProducts && (
+          <ProductsFeatured
+            title={intl.formatMessage(commonMessages.youMightLike)}
+          />
+        )}
+      </Container>
+    </>
   );
 };
 

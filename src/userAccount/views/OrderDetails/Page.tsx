@@ -61,11 +61,7 @@ const Page: React.FC<{
             <DropdownMenu
               type="clickable"
               header={
-                <IconButton
-                  testingContext="expandButton"
-                  name="expand"
-                  size={28}
-                />
+                <IconButton data-test="expandButton" name="expand" size={28} />
               }
               items={[
                 {

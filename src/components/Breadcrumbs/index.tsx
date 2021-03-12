@@ -1,6 +1,5 @@
-import classNames from "classnames";
-import Link from "next/link";
 import * as React from "react";
+import { Breadcrumb as BsBreadcrumb } from "react-bootstrap";
 import { FormattedMessage } from "react-intl";
 
 import { paths } from "@paths";
@@ -35,46 +34,24 @@ export const extractBreadcrumbs = (category: Category_category) => {
   return breadcrumbs;
 };
 
-const getBackLink = (breadcrumbs: Breadcrumb[]) =>
-  breadcrumbs.length > 1 ? breadcrumbs[breadcrumbs.length - 2].link : "/";
-
 const Breadcrumbs: React.FC<{
   breadcrumbs: Breadcrumb[];
 }> = ({ breadcrumbs }) => (
   <>
-    {matches =>
-      matches ? (
-        <ul className="breadcrumbs">
-          <li>
-            <Link href={paths.home}>
-              <a>
-                <FormattedMessage {...commonMessages.home} />
-              </a>
-            </Link>
-          </li>
-          {breadcrumbs.map((breadcrumb, index) => (
-            <li
-              key={`${breadcrumb.value}-${index}`}
-              className={classNames({
-                breadcrumbs__active: index === breadcrumbs.length - 1,
-              })}
-            >
-              <Link href={breadcrumb.link}>
-                <a>{breadcrumb.value}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <div className="breadcrumbs">
-          <Link href={getBackLink(breadcrumbs)}>
-            <a>
-              <FormattedMessage defaultMessage="Back" />
-            </a>
-          </Link>
-        </div>
-      )
-    }
+    <BsBreadcrumb className="breadcrumbs">
+      <BsBreadcrumb.Item href={paths.home}>
+        <FormattedMessage {...commonMessages.home} />
+      </BsBreadcrumb.Item>
+      {breadcrumbs.map((breadcrumb, index) => (
+        <BsBreadcrumb.Item
+          href={breadcrumb.link}
+          key={`${breadcrumb.value}-${index}`}
+          active={index === breadcrumbs.length - 1}
+        >
+          {breadcrumb.value}
+        </BsBreadcrumb.Item>
+      ))}
+    </BsBreadcrumb>
   </>
 );
 

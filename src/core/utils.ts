@@ -10,10 +10,10 @@ import {
 import { FetchResult } from "react-apollo";
 import { UrlObject } from "url";
 
-import { MetadataItem } from "@temp/gql/collections";
+import { MetadataItem } from "@temp/gql/MetadataItem";
+import { IFilterAttributes } from "@types";
 
 import { OrderDirection, ProductOrderField } from "../../gqlTypes/globalTypes";
-import { IFilterAttributes } from "../@next/types";
 import { FormError } from "./types";
 
 export const slugify = (text: string | number): string =>

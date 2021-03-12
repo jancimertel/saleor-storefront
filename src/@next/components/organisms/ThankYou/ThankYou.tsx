@@ -1,9 +1,9 @@
 import { OrderStatus } from "@saleor/sdk";
 import Link from "next/link";
 import React from "react";
+import { Button } from "react-bootstrap";
 import { defineMessages, FormattedMessage } from "react-intl";
 
-import { Button } from "@components/atoms";
 import { Container } from "@components/templates";
 import { checkoutMessages } from "@temp/intl";
 
@@ -55,16 +55,12 @@ const ThankYou: React.FC<IProps> = ({
         </S.Paragraph>
         <S.Buttons>
           <Link href={continueShoppingUrl}>
-            <Button
-              testingContext="continueShoppingButton"
-              color="secondary"
-              fullWidth
-            >
+            <Button data-test="continueShoppingButton" variant="secondary">
               <FormattedMessage {...checkoutMessages.continueShopping} />
             </Button>
           </Link>
           <Link href={orderDetailsUrl}>
-            <Button testingContext="gotoOrderDetailsButton" fullWidth>
+            <Button>
               <FormattedMessage defaultMessage="ORDER DETAILS" />
             </Button>
           </Link>

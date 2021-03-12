@@ -34,7 +34,7 @@ storiesOf("@components/molecules/CardHeader", module)
   .add("with custom close icon", () => {
     const icon = (
       <IconButton
-        testingContext="test"
+        data-test="test"
         name="edit"
         size={24}
         onClick={action("edit")}
@@ -46,7 +46,7 @@ storiesOf("@components/molecules/CardHeader", module)
   .add("with prefix", () => {
     const icon = (
       <IconButton
-        testingContext="test"
+        data-test="test"
         name="arrow_back"
         size={24}
         onClick={action("onArrowBack")}
@@ -63,7 +63,7 @@ storiesOf("@components/molecules/CardHeader", module)
   .add("with big text size", () => {
     const closeIcon = (
       <IconButton
-        testingContext="test"
+        data-test="test"
         name="trash"
         size={30}
         onClick={action("trash")}

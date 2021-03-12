@@ -8,7 +8,7 @@ export interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
    * Used as marker for writing e2e tests
    */
-  testingContext: string;
+  testingContext?: string;
   /**
    * Used as marker for writing e2e tests. Use unique ID to differentiate
    * multiple elements in the same view from each other

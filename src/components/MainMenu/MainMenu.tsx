@@ -5,7 +5,6 @@ import { FormattedMessage } from "react-intl";
 import ReactSVG from "react-svg";
 
 import { paths } from "@paths";
-import { Search } from "@temp/components/Search";
 import { commonMessages } from "@temp/intl";
 
 import logoImg from "../../images/logo.svg";
@@ -15,10 +14,10 @@ import { Offline, Online, OverlayContext, OverlayTheme, OverlayType } from "..";
 import "./scss/index.scss";
 
 interface MainMenuProps {
-  demoMode: boolean;
+  className?: string;
 }
 
-const MainMenu: React.FC<MainMenuProps> = ({ demoMode }) => {
+const MainMenu: React.FC<MainMenuProps> = ({ className }) => {
   const overlayContext = useContext(OverlayContext);
 
   const { user, signOut } = useAuth();
@@ -44,15 +43,12 @@ const MainMenu: React.FC<MainMenuProps> = ({ demoMode }) => {
   }, [activeDropdown]);
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="white" expand="lg" className={className}>
       <Container className="justify-content-between">
         <Navbar.Brand href={paths.home}>
           <ReactSVG path={logoImg} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse>
-          <Search className="mr-sm-2" placeholder="Search" />
-        </Navbar.Collapse>
         <Navbar id="basic-navbar-nav">
           <Nav>
             <Online>

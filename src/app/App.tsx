@@ -29,7 +29,7 @@ const App: React.FC = ({ children }) => {
     <ShopProvider>
       <OverlayProvider pathname={pathname}>
         <MetaConsumer />
-        <MainMenu demoMode={false} />
+        <MainMenu />
         {children}
         <Footer />
         <OverlayManager />

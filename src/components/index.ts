@@ -1,6 +1,3 @@
-export { default as Button } from "./Button";
-export type { ButtonProps } from "./Button";
-export { default as Carousel } from "./Carousel";
 export { default as CheckoutLogin } from "./CheckoutLogin";
 export { default as ContentPage } from "./ContentPage";
 export { default as Dropdown } from "./Dropdown";
@@ -17,7 +14,6 @@ export { default as PasswordResetRequestForm } from "./PasswordResetRequestForm"
 export { default as PriceRangeFilter } from "./PriceRangeFilter";
 export { default as ProductListItem } from "./ProductListItem";
 export { default as SelectField } from "./SelectField";
-export { default as SocialMediaIcon } from "./SocialMediaIcon";
 export { default as TextField } from "./TextField";
 export { default as AddressSummary } from "./AddressSummary";
 export { CartTable } from "./CartTable";

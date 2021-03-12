@@ -1,10 +1,12 @@
 import Link from "next/link";
 import * as React from "react";
+import { Carousel } from "react-bootstrap";
 
-import { getMetadataValue } from "@temp/core/utils";
 import { generateCollectionUrl } from "@utils/core";
 
 import { TypedFeaturedProductsQuery } from "./queries";
+
+import "./scss/index.scss";
 
 const ProductsFeatured: React.FC<{ title?: any }> = () => {
   return (
@@ -12,15 +14,10 @@ const ProductsFeatured: React.FC<{ title?: any }> = () => {
       {({ data }) => {
         if (data.collections.edges.length) {
           return (
-            <div className="products-featured">
+            <Carousel className="featured-carousel">
               {data.collections.edges.map(({ node: collection }) => {
-                const isImportant = getMetadataValue(
-                  "important",
-                  collection.metadata
-                );
-
-                if (isImportant) {
-                  return (
+                return (
+                  <Carousel.Item key={collection.id}>
                     <Link
                       key={collection.id}
                       href={generateCollectionUrl(
@@ -35,10 +32,10 @@ const ProductsFeatured: React.FC<{ title?: any }> = () => {
                         />
                       </a>
                     </Link>
-                  );
-                }
+                  </Carousel.Item>
+                );
               })}
-            </div>
+            </Carousel>
           );
         }
       }}

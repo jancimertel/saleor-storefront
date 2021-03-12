@@ -3,9 +3,10 @@ import { CompleteCheckout_checkoutComplete_order } from "@saleor/sdk/lib/mutatio
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import { Button } from "react-bootstrap";
 import { useIntl } from "react-intl";
 
-import { Button, Loader, Redirect } from "@components/atoms";
+import { Loader, Redirect } from "@components/atoms";
 import { CheckoutProgressBar } from "@components/molecules";
 import {
   adyenNotNegativeConfirmationStatusCodes,
@@ -304,7 +305,7 @@ const CheckoutPage: React.FC<NextPage> = () => {
         cartLoaded &&
         buttonText && (
           <Button
-            testingContext="checkoutPageNextStepButton"
+            data-test="checkoutPageNextStepButton"
             onClick={() => pageCompleteRef.current?.()}
             type="submit"
             disabled={!isFullyLoaded || submitInProgress}

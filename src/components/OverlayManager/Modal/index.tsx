@@ -7,11 +7,11 @@ export interface IModal {
   /**
    * Used as marker for writing e2e tests
    */
-  testingContext: string;
+  testingContext?: string;
 }
 
 const Modal: React.FC<IModal> = ({ overlay, testingContext }) => (
-  <Overlay testingContext={testingContext} context={overlay}>
+  <Overlay data-test={testingContext} context={overlay}>
     {overlay.context.content}
   </Overlay>
 );

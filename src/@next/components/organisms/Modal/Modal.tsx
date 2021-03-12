@@ -15,18 +15,11 @@ const getCancelBtnProps = (action: () => void, text?: string) =>
     },
   };
 
-const getSubmitBtnProps = (
-  text: string,
-  submitButtonTestingContext: string,
-  action?: () => void
-) => ({
-  submitBtn: action
-    ? {
-        action,
-        testingContext: submitButtonTestingContext,
-        text,
-      }
-    : { testingContext: submitButtonTestingContext, text },
+const getSubmitBtnProps = (text: string, action?: () => void) => ({
+  submitBtn: {
+    action,
+    text,
+  },
 });
 
 export const Modal: React.FC<IProps> = ({
@@ -37,7 +30,6 @@ export const Modal: React.FC<IProps> = ({
   formId = "modal-submit",
   onSubmit,
   submitBtnText,
-  submitButtonTestingContext,
   show,
   target,
   testingContext,
@@ -45,7 +37,7 @@ export const Modal: React.FC<IProps> = ({
 }: IProps) => {
   return (
     <Overlay
-      testingContext={testingContext}
+      data-test={testingContext}
       position="center"
       show={show}
       hide={hide}
@@ -59,11 +51,7 @@ export const Modal: React.FC<IProps> = ({
         <FormFooter
           divider
           disabled={disabled}
-          {...getSubmitBtnProps(
-            submitBtnText,
-            submitButtonTestingContext,
-            onSubmit
-          )}
+          {...getSubmitBtnProps(submitBtnText, onSubmit)}
           {...getCancelBtnProps(hide, cancelBtnText)}
           formId={formId}
         />

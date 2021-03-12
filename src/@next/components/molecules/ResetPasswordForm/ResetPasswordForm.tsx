@@ -1,7 +1,7 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 import { FormattedMessage, useIntl } from "react-intl";
 
-import { Button } from "@components/atoms";
 import { commonMessages } from "@temp/intl";
 
 import { TextField } from "../TextField";
@@ -72,7 +72,7 @@ export const ResetPasswordForm: React.FC<IProps> = ({
           />
         </S.InputFields>
 
-        <Button testingContext="submit" type="submit" fullWidth>
+        <Button type="submit">
           <FormattedMessage defaultMessage="SET NEW PASSWORD" />
         </Button>
       </form>

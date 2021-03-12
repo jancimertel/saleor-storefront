@@ -15,34 +15,6 @@ export const homePageQuery = gql`
         alt
       }
     }
-    categories(level: 0, first: 0, last: 100) {
-      edges {
-        node {
-          id
-          name
-          backgroundImage {
-            url
-            alt
-          }
-          children(first: 0, last: 100) {
-            edges {
-              node {
-                name
-                id
-                backgroundImage {
-                  url
-                  alt
-                }
-              }
-            }
-          }
-          metadata {
-            key
-            value
-          }
-        }
-      }
-    }
   }
 `;
 

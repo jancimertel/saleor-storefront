@@ -54,7 +54,7 @@ export interface ProductsList_categories_edges_node {
   backgroundImage: ProductsList_categories_edges_node_backgroundImage | null;
 }
 
-export interface ProductsList_categories_edges {
+export interface ProductsList_categories_edge {
   __typename: "CategoryCountableEdge";
   /**
    * The item at the end of the edge.
@@ -62,9 +62,17 @@ export interface ProductsList_categories_edges {
   node: ProductsList_categories_edges_node;
 }
 
+export interface ProductsList_categories_edges {
+  __typename: "CategoryCountableEdges";
+  /**
+   * The item at the end of the edge.
+   */
+  edges: ProductsList_categories_edge[];
+}
+
 export interface ProductsList_categories {
   __typename: "CategoryCountableConnection";
-  edges: ProductsList_categories_edges[];
+  categories: ProductsList_categories_edges;
 }
 
 export interface ProductsList {
@@ -76,10 +84,6 @@ export interface ProductsList {
    * Look up a collection by ID.
    */
   collection: ProductsList_collection | null;
-  /**
-   * List of the shop's categories.
-   */
-  categories: ProductsList_categories | null;
 }
 
 export interface ProductsListVariables {

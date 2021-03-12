@@ -80,7 +80,7 @@ export const SideNavbar: React.FC<IProps> = ({
       show={show}
       hide={handleHide}
       target={target}
-      testingContext="navigationMenu"
+      data-test="navigationMenu"
     >
       <S.Wrapper>
         <S.Menu>

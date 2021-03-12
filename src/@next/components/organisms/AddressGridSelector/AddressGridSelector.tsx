@@ -70,7 +70,6 @@ const AddressGridSelector: React.FC<IProps> = ({
                   (elements, { id, address }, index) => {
                     elements.push(
                       <AddressTileOption
-                        testingContext={testingContext}
                         data-test={`${testingContext}AddressTileOption`}
                         data-test-id={index}
                         key={`addressTile-${id}`}

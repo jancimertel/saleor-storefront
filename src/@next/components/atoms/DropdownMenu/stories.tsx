@@ -16,12 +16,7 @@ const Container = styled.div`
 `;
 const onClick = action("onClick");
 const header = (
-  <IconButton
-    testingContext="editButton"
-    size={19}
-    name="edit"
-    onClick={onClick}
-  />
+  <IconButton data-test="editButton" size={19} name="edit" onClick={onClick} />
 );
 const items = [
   { onClick, content: <span>MY ACCOUNT</span> },

@@ -4,9 +4,10 @@ import { UserDetails_me } from "@saleor/sdk/lib/queries/gqlTypes/UserDetails";
 import { NextPage } from "next";
 import Link from "next/link";
 import React from "react";
+import { Button } from "react-bootstrap";
 import { FormattedMessage } from "react-intl";
 
-import { Button, CartFooter, CartHeader } from "@components/atoms";
+import { CartFooter, CartHeader } from "@components/atoms";
 import { TaxedMoney } from "@components/containers";
 import { CartRow } from "@components/organisms";
 import { Cart, CartEmpty } from "@components/templates";
@@ -22,7 +23,7 @@ const title = (
 
 const getShoppingButton = () => (
   <Link href={paths.home}>
-    <Button testingContext="cartPageContinueShoppingButton">
+    <Button data-test="cartPageContinueShoppingButton">
       <FormattedMessage {...checkoutMessages.continueShopping} />
     </Button>
   </Link>
@@ -30,7 +31,7 @@ const getShoppingButton = () => (
 
 const getCheckoutButton = (user?: UserDetails_me | null) => (
   <Link href={user ? paths.checkout : paths.login}>
-    <Button testingContext="proceedToCheckoutButton">
+    <Button data-test="proceedToCheckoutButton">
       <FormattedMessage defaultMessage="PROCEED TO CHECKOUT" />
     </Button>
   </Link>

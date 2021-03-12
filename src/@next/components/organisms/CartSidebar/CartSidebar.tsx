@@ -1,10 +1,10 @@
 import { IItems } from "@saleor/sdk/lib/api/Cart/types";
 import React from "react";
+import { Button } from "react-bootstrap";
 import { FormattedMessage } from "react-intl";
 import ReactSVG from "react-svg";
 
 import {
-  Button,
   CartCostsSummary,
   Loader,
   OfflinePlaceholder,
@@ -109,7 +109,7 @@ const CartSidebar: React.FC<ICartSidebar> = ({
       show={show}
       hide={hide}
       target={target}
-      testingContext="cartOverlay"
+      data-test="cartOverlay"
     >
       <S.Wrapper ref={setElementRef()}>
         <CardHeader divider onHide={hide} prefix={<ReactSVG path={cartImg} />}>
@@ -144,9 +144,8 @@ const CartSidebar: React.FC<ICartSidebar> = ({
               </S.EmptyCartDescription>
               <Button
                 name="continueShopping"
-                testingContext="emptyCartHideOverlayButton"
-                color="secondary"
-                fullWidth
+                data-test="emptyCartHideOverlayButton"
+                variant="secondary"
                 onClick={continueShopping}
               >
                 <FormattedMessage
@@ -167,9 +166,8 @@ const CartSidebar: React.FC<ICartSidebar> = ({
             />
             <Button
               name="gotoCartView"
-              testingContext="gotoCartViewButton"
-              color="secondary"
-              fullWidth
+              data-test="gotoCartViewButton"
+              variant="secondary"
               onClick={goToCart}
             >
               <FormattedMessage
@@ -179,9 +177,8 @@ const CartSidebar: React.FC<ICartSidebar> = ({
             </Button>
             <Button
               name="gotoCheckout"
-              testingContext="gotoCheckoutButton"
-              color="primary"
-              fullWidth
+              data-test="gotoCheckoutButton"
+              variant="primary"
               onClick={proceedToCheckout}
             >
               <FormattedMessage

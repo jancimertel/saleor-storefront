@@ -9,6 +9,6 @@ storiesOf("@components/atoms/Attribute", module)
     <Attribute
       description="First Name"
       attributeValue="John"
-      testingContext="firstNameAttribute"
+      data-test="firstNameAttribute"
     />
   ));

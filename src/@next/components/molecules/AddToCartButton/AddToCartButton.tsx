@@ -1,7 +1,6 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 import { FormattedMessage } from "react-intl";
-
-import { Button } from "@components/atoms";
 
 export interface IAddToCartButton {
   disabled: boolean;
@@ -14,8 +13,7 @@ export const AddToCartButton: React.FC<IAddToCartButton> = ({
 }) => {
   return (
     <Button
-      fullWidth
-      testingContext="addProductToCartButton"
+      data-test="addProductToCartButton"
       onClick={onSubmit}
       color="primary"
       disabled={disabled}

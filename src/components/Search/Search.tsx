@@ -1,10 +1,10 @@
 import { NextRouter } from "next/router";
 import * as React from "react";
 import { useState } from "react";
-import { Form, InputGroup } from "react-bootstrap";
+import { InputGroup } from "react-bootstrap";
 import { Search as SearchIcon } from "react-bootstrap-icons";
 import { AsyncTypeahead } from "react-bootstrap-typeahead"; // ES2015
-import { WrappedComponentProps } from "react-intl";
+import { injectIntl, WrappedComponentProps } from "react-intl";
 
 import { SearchResults } from "@temp/components/Search/gqlTypes/SearchResults";
 import { channelSlug } from "@temp/constants";
@@ -21,11 +21,9 @@ interface SearchProps extends WrappedComponentProps {
 }
 
 const Search: React.FC<SearchProps> = props => {
-  const [isLoading, setIsLoading] = useState(false);
   const [search, setSearch] = useState("");
 
   const handleSearch = query => {
-    setIsLoading(true);
     setSearch(query);
   };
 
@@ -38,66 +36,64 @@ const Search: React.FC<SearchProps> = props => {
 
   return (
     <div className="search-box">
-      <Form.Group className="mb-0">
-        <InputGroup>
-          <InputGroup.Prepend>
-            <InputGroup.Text>
-              <SearchIcon />
-            </InputGroup.Text>
-          </InputGroup.Prepend>
-          <TypedSearchResults
-            renderOnError
-            displayError
-            errorPolicy="all"
-            variables={{
-              channel: channelSlug,
-              query: search,
-            }}
-          >
-            {({ data, error, loading }) => {
-              let options = [];
-              if (hasResults(data)) {
-                options = data.products.edges.map(i => ({
-                  avatar_url: i.node.thumbnail.url,
-                  id: i.node.id,
-                  name: i.node.name,
-                }));
-              }
-              return (
-                <AsyncTypeahead
-                  filterBy={filterBy}
-                  id="async-example"
-                  isLoading={loading}
-                  labelKey="name"
-                  minLength={3}
-                  delay={1000}
-                  onSearch={handleSearch}
-                  options={options}
-                  placeholder={props.placeholder}
-                  renderMenuItemChildren={(option, props) => (
-                    <>
-                      <img
-                        alt={option.name}
-                        src={option.avatar_url}
-                        style={{
-                          height: "24px",
-                          marginRight: "10px",
-                          width: "24px",
-                        }}
-                      />
-                      <span>{option.name}</span>
-                    </>
-                  )}
-                />
-              );
-            }}
-          </TypedSearchResults>
-        </InputGroup>
-      </Form.Group>
+      <InputGroup size="lg">
+        <InputGroup.Prepend>
+          <InputGroup.Text>
+            <SearchIcon />
+          </InputGroup.Text>
+        </InputGroup.Prepend>
+        <TypedSearchResults
+          renderOnError
+          displayError
+          errorPolicy="all"
+          variables={{
+            channel: channelSlug,
+            query: search,
+          }}
+        >
+          {({ data, error, loading }) => {
+            let options = [];
+            if (hasResults(data)) {
+              options = data.products.edges.map(i => ({
+                avatar_url: i.node.thumbnail.url,
+                id: i.node.id,
+                name: i.node.name,
+              }));
+            }
+            return (
+              <AsyncTypeahead
+                filterBy={filterBy}
+                id="async-example"
+                isLoading={loading}
+                labelKey="name"
+                minLength={3}
+                delay={1000}
+                onSearch={handleSearch}
+                options={options}
+                placeholder={props.placeholder}
+                renderMenuItemChildren={(option, props) => (
+                  <>
+                    <img
+                      alt={option.name}
+                      src={option.avatar_url}
+                      style={{
+                        height: "24px",
+                        marginRight: "10px",
+                        width: "24px",
+                      }}
+                    />
+                    <span>{option.name}</span>
+                  </>
+                )}
+              />
+            );
+          }}
+        </TypedSearchResults>
+      </InputGroup>
     </div>
   );
 };
 
 // Workaround ATM for:
 // withRouter(Search): Function components do not support contextType
-export default Search;
+export default injectIntl(Search);

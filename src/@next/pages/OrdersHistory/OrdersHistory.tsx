@@ -1,8 +1,9 @@
 import { useAuth, useOrdersByUser } from "@saleor/sdk/";
 import React from "react";
+import { Button } from "react-bootstrap";
 import { FormattedMessage } from "react-intl";
 
-import { Button, Loader } from "@components/atoms";
+import { Loader } from "@components/atoms";
 import { OrderTable } from "@components/molecules";
 
 import * as S from "./styles";
@@ -28,7 +29,7 @@ export const OrdersHistory: React.FC = () => {
       {data?.pageInfo.hasNextPage && (
         <S.Wrapper>
           <Button
-            testingContext="loadMoreOrdersButton"
+            data-test="loadMoreOrdersButton"
             onClick={() => {
               loadMore({
                 after: data!.pageInfo.endCursor,

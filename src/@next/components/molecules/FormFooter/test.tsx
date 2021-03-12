@@ -2,8 +2,9 @@ import "jest-styled-components";
 
 import { mount, shallow } from "enzyme";
 import React from "react";
+import { Button } from "react-bootstrap";
 
-import { Button, ButtonLink } from "@components/atoms";
+import { ButtonLink } from "@components/atoms";
 import { defaultTheme } from "@styles";
 
 import { FormFooter } from ".";

@@ -31,7 +31,7 @@ export const AccountTile: React.FC = () => {
               <FormattedMessage defaultMessage="Personal details" />
               {!isEditing && (
                 <IconButton
-                  testingContext="editDetailsButton"
+                  data-test="editDetailsButton"
                   name="edit"
                   size={22}
                   onClick={() => setIsEditing(isEditing => !isEditing)}
@@ -56,12 +56,12 @@ export const AccountTile: React.FC = () => {
                 <Attribute
                   description={intl.formatMessage(commonMessages.firstName)}
                   attributeValue={(user && user.firstName) || "-"}
-                  testingContext="firstNameText"
+                  data-test="firstNameText"
                 />
                 <Attribute
                   description={intl.formatMessage(commonMessages.lastName)}
                   attributeValue={(user && user.lastName) || "-"}
-                  testingContext="lastNameText"
+                  data-test="lastNameText"
                 />
               </S.ContentOneLine>
             )}

@@ -10,5 +10,5 @@ export interface IProps {
   /**
    * Used as marker for writing e2e tests
    */
-  testingContext: string;
+  testingContext?: string;
 }

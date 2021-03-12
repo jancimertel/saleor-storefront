@@ -1,6 +1,9 @@
-.search-box{
+.search-box {
   width: 100%;
-  > div, input {
-    width: 100%;
+
+  > div,
+  input,
+  .input-group {
+    width: 100% !important;
   }
 }

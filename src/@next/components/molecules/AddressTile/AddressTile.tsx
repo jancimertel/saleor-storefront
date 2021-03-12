@@ -28,9 +28,7 @@ export const AddressTile: React.FC<IProps> = ({
     <S.HeaderContent>
       <DropdownMenu
         type="clickable"
-        header={
-          <IconButton testingContext="expandButton" name="expand" size={24} />
-        }
+        header={<IconButton data-test="expandButton" name="expand" size={24} />}
         items={[
           {
             content: defaultBillingAddress,
@@ -62,7 +60,7 @@ export const AddressTile: React.FC<IProps> = ({
     <S.FooterContent>
       <div>
         <IconButton
-          testingContext="editButton"
+          data-test="editButton"
           name="edit"
           onClick={onEdit}
           size={22}
@@ -70,7 +68,7 @@ export const AddressTile: React.FC<IProps> = ({
       </div>
       <div>
         <IconButton
-          testingContext="removeButton"
+          data-test="removeButton"
           name="trash"
           onClick={onRemove}
           size={19}

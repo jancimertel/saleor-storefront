@@ -1,10 +1,9 @@
 import Link from "next/link";
 import * as React from "react";
+import { Button } from "react-bootstrap";
 import { FormattedMessage } from "react-intl";
 
 import { paths } from "@paths";
-
-import Button from "../Button";
 
 interface NotFoundProps {
   message?: string;
@@ -30,7 +29,7 @@ const NotFound: React.FC<NotFoundProps> = () => (
     <div className="not-found-page__button">
       <Link href={paths.home}>
         <a>
-          <Button testingContext="404pageGotoHomeButton" secondary>
+          <Button data-test="404pageGotoHomeButton" variant="secondary">
             <FormattedMessage defaultMessage="Back to home" />
           </Button>
         </a>

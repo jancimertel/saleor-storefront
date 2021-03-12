@@ -68,7 +68,7 @@ describe("<CardHeader />", () => {
   });
 
   it("should render custom close icon when `closeIcon` prop is defined", () => {
-    const closeIcon = <IconButton testingContext="test" name="edit" />;
+    const closeIcon = <IconButton data-test="test" name="edit" />;
     const icon = renderHeader({ ...DEFAULT_PROPS, closeIcon }).find(IconButton);
 
     expect(icon.exists()).toEqual(true);
@@ -76,7 +76,7 @@ describe("<CardHeader />", () => {
   });
 
   it("should render prefix as icon", () => {
-    const prefix = <IconButton testingContext="test" name="arrow_back" />;
+    const prefix = <IconButton data-test="test" name="arrow_back" />;
     const icon = renderHeader({ ...DEFAULT_PROPS, prefix }).find(IconButton);
 
     expect(icon.exists()).toEqual(true);

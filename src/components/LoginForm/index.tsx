@@ -1,11 +1,12 @@
 import { useAuth } from "@saleor/sdk";
 import * as React from "react";
+import { Button } from "react-bootstrap";
 import { useIntl } from "react-intl";
 
 import { demoMode } from "@temp/constants";
 import { commonMessages } from "@temp/intl";
 
-import { Button, Form, TextField } from "..";
+import { Form, TextField } from "..";
 
 interface ILoginForm {
   hide?: () => void;
@@ -57,7 +58,7 @@ const LoginForm: React.FC<ILoginForm> = ({ hide }) => {
         />
         <div className="login-form__button">
           <Button
-            testingContext="submit"
+            data-test="submit"
             type="submit"
             {...(loading && { disabled: true })}
           >

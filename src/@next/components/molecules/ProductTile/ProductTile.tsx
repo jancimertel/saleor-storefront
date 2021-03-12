@@ -1,9 +1,10 @@
+import Link from "next/link";
 import React from "react";
+import { Card } from "react-bootstrap";
 
 import { TaxedMoney } from "@components/containers";
-import { Thumbnail } from "@components/molecules";
+import { generateProductUrl } from "@temp/core/utils";
 
-import * as S from "./styles";
 import { IProps } from "./types";
 
 export const ProductTile: React.FC<IProps> = ({ product }: IProps) => {
@@ -15,14 +16,22 @@ export const ProductTile: React.FC<IProps> = ({ product }: IProps) => {
       : undefined;
 
   return (
-    <S.Wrapper>
-      <S.Title data-test="productTile">{product.name}</S.Title>
-      <S.Price data-test="productPrice">
+    <Card style={{ width: "100%" }}>
+      <Card.Img
+        src={product.thumbnail ? product.thumbnail.url : ""}
+        variant="top"
+      />
+      <Card.Body>
+        <Card.Title>
+          <Link href={generateProductUrl(product.id, product.name)}>
+            {product.name}
+          </Link>
+        </Card.Title>
+        <Card.Text>{product.seoDescription}</Card.Text>
+      </Card.Body>
+      <Card.Footer className="text-muted">
         <TaxedMoney taxedMoney={price} />
-      </S.Price>
-      <S.Image data-test="productThumbnail">
-        <Thumbnail source={product} />
-      </S.Image>
-    </S.Wrapper>
+      </Card.Footer>
+    </Card>
   );
 };

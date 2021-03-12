@@ -1,8 +1,9 @@
 import { Formik } from "formik";
 import React from "react";
+import { Button } from "react-bootstrap";
 import { FormattedMessage, useIntl } from "react-intl";
 
-import { Button, ButtonLink } from "@components/atoms";
+import { ButtonLink } from "@components/atoms";
 import { commonMessages } from "@temp/intl";
 
 import { TextField } from "../TextField";
@@ -63,7 +64,7 @@ export const AccountUpdateForm: React.FC<{
               </S.ContentEditOneLine>
               <S.FormButtons>
                 <ButtonLink
-                  testingContext="cancelButton"
+                  data-test="cancelButton"
                   type="button"
                   color="secondary"
                   onClick={hide}
@@ -71,7 +72,7 @@ export const AccountUpdateForm: React.FC<{
                   <FormattedMessage {...commonMessages.cancel} />
                 </ButtonLink>
                 <Button
-                  testingContext="submit"
+                  data-test="submit"
                   type="submit"
                   disabled={isSubmitting || !isValid}
                   size="sm"

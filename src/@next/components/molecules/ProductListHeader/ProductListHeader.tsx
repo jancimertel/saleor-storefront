@@ -1,7 +1,9 @@
 import React from "react";
+import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Filter as FilterIcon } from "react-bootstrap-icons";
 import { FormattedMessage } from "react-intl";
 
-import { Chip, DropdownSelect, Icon } from "@components/atoms";
+import { Chip } from "@components/atoms";
 import { commonMessages } from "@temp/intl";
 
 import * as S from "./styles";
@@ -19,11 +21,11 @@ export const ProductListHeader: React.FC<IProps> = ({
   onCloseFilterAttribute,
 }: IProps) => {
   return (
-    <S.Wrapper>
-      <S.Bar>
-        <S.LeftSide>
-          <S.FiltersButton onClick={openFiltersMenu} data-test="filtersButton">
-            <Icon name="filter" size={24} />
+    <Navbar>
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto" variant="pills">
+          <Nav.Link onClick={openFiltersMenu}>
+            <FilterIcon />
             <S.Filters>
               <FormattedMessage {...commonMessages.filterHeader} />{" "}
               {activeFilters > 0 && (
@@ -32,45 +34,40 @@ export const ProductListHeader: React.FC<IProps> = ({
                 </>
               )}
             </S.Filters>
-          </S.FiltersButton>
+          </Nav.Link>
           {activeFilters > 0 && (
-            <S.Clear onClick={clearFilters} data-test="clearFiltersButton">
+            <Nav.Link onClick={clearFilters} data-test="clearFiltersButton">
               <FormattedMessage {...commonMessages.clearFilterHeader} />
-            </S.Clear>
+            </Nav.Link>
           )}
-        </S.LeftSide>
-
-        <S.RightSide>
-          <S.Element data-test="productsFoundCounter">
-            <S.Label>
-              <FormattedMessage defaultMessage="Products found:" />{" "}
-            </S.Label>
+        </Nav>
+        <Nav variant="pills">
+          <Navbar.Text>
+            <FormattedMessage defaultMessage="Products found:" />{" "}
             {numberOfProducts}
-          </S.Element>
-          <S.Element>
-            <S.Sort>
-              <DropdownSelect
-                onChange={onChange}
-                options={sortOptions}
-                value={sortOptions.find(
-                  option => option.value === activeSortOption
-                )}
-              />
-            </S.Sort>
-          </S.Element>
-        </S.RightSide>
-      </S.Bar>
-      <S.FiltersChipsWrapper>
-        {activeFiltersAttributes.map(
-          ({ attributeSlug, valueName, valueSlug }) => (
-            <Chip
-              onClose={() => onCloseFilterAttribute(attributeSlug, valueSlug)}
-            >
-              {valueName}
-            </Chip>
-          )
-        )}
-      </S.FiltersChipsWrapper>
-    </S.Wrapper>
+          </Navbar.Text>
+          <NavDropdown
+            onSelect={(event, eventKey) => {}}
+            id="sorting"
+            title={<FormattedMessage defaultMessage="Sort by:" />}
+          >
+            {sortOptions.map((option, i) => (
+              <NavDropdown.Item eventKey={option.value} key={i}>
+                {option.label}
+              </NavDropdown.Item>
+            ))}
+          </NavDropdown>
+        </Nav>
+      </Navbar.Collapse>
+      {activeFiltersAttributes.map(
+        ({ attributeSlug, valueName, valueSlug }) => (
+          <Chip
+            onClose={() => onCloseFilterAttribute(attributeSlug, valueSlug)}
+          >
+            {valueName}
+          </Chip>
+        )
+      )}
+    </Navbar>
   );
 };

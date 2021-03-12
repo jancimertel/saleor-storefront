@@ -11,7 +11,7 @@ const TEXT = "Text";
 describe("<ButtonLink />", () => {
   const renderButtonLink = (props?: IProps) =>
     shallow(
-      <ButtonLink testingContext="test" {...props}>
+      <ButtonLink data-test="test" {...props}>
         {TEXT}
       </ButtonLink>
     );

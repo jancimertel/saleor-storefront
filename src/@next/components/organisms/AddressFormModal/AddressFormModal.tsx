@@ -48,8 +48,8 @@ export const AddressFormModal: React.FC<IProps> = ({
 
   return (
     <Modal
-      submitButtonTestingContext="submitAddressFormModalButton"
-      testingContext="submitAddressFormModal"
+      submitButtondata-test="submitAddressFormModalButton"
+      data-test="submitAddressFormModal"
       title={title}
       hide={() => {
         hideModal();

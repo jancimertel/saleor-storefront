@@ -149,7 +149,7 @@ export const CartRow: React.FC<IProps> = ({
       </S.Quantity>
       <S.Trash>
         <IconButton
-          testingContext="removeButton"
+          data-test="removeButton"
           testingContextId={sku}
           size={22}
           name="trash"

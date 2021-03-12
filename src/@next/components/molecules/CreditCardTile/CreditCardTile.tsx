@@ -34,7 +34,7 @@ export const CreditCardTile: React.FC<IProps> = ({
           name="trash"
           onClick={onRemove}
           size={22}
-          testingContext="removeCardButton"
+          data-test="removeCardButton"
         />
       </div>
     </S.FooterContent>

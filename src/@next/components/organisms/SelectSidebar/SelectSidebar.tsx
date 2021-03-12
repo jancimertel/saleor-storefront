@@ -33,7 +33,7 @@ export const SelectSidebar: React.FC<IProps> = ({
       hide={hide}
       transparent
       target={target}
-      testingContext="attributeSelection"
+      data-test="attributeSelection"
       testingContextId={testingContextId}
     >
       <S.Wrapper ref={setElementRef()}>
@@ -65,7 +65,7 @@ export const SelectSidebar: React.FC<IProps> = ({
         </S.Content>
         {footerTitle && (
           <S.Footer onClick={onClickFooter}>
-            <ButtonLink testingContext="footerActionButton" color="secondary">
+            <ButtonLink data-test="footerActionButton" color="secondary">
               {footerTitle}
             </ButtonLink>
           </S.Footer>

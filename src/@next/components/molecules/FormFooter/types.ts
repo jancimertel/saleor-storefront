@@ -4,7 +4,7 @@ export interface IButtonProps {
   /**
    * Used as marker for writing e2e tests
    */
-  testingContext: string;
+  testingContext?: string;
 }
 
 export interface IProps {

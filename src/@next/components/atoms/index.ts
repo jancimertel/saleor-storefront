@@ -1,7 +1,6 @@
 export * from "./AddNewTile";
 export * from "./Address";
 export * from "./Attribute";
-export * from "./Button";
 export * from "./ButtonLink";
 export * from "./CartFooter";
 export * from "./CartHeader";
@@ -26,7 +25,6 @@ export * from "./Radio";
 export * from "./RichTextEditorContent";
 export * from "./Select";
 export * from "./ShadowBox";
-export * from "./SocialMediaIcon";
 export * from "./StripeInputElement";
 export * from "./Tile";
 export * from "./TileGrid";

@@ -37,7 +37,7 @@ export const AttributeValuesChecklist: React.FC<IProps> = ({
       {!viewAllOptions && values.length > valuesShowLimitNumber && (
         <S.ViewMoreButton>
           <ButtonLink
-            testingContext="viewAllButton"
+            data-test="viewAllButton"
             size="sm"
             color="secondary"
             onClick={() => setViewAllOptions(true)}

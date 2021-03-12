@@ -168,7 +168,7 @@ const AddToCartSection: React.FC<IAddToCartSection> = ({
           disabled={isOutOfStock || isNoItemsAvailable}
           onQuantityChange={setQuantity}
           hideErrors={!variantId || isOutOfStock || isNoItemsAvailable}
-          testingContext="addToCartQuantity"
+          data-test="addToCartQuantity"
         />
       </S.QuantityInput>
       <AddToCartButton

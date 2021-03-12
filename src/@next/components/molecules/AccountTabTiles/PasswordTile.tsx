@@ -26,7 +26,7 @@ export const PasswordTile: React.FC = () => {
             <FormattedMessage defaultMessage="MY PASSWORD" />
             {!isEditing && (
               <IconButton
-                testingContext="editPasswordButton"
+                data-test="editPasswordButton"
                 name="edit"
                 size={22}
                 onClick={() => setIsEditing(isEditing => !isEditing)}
@@ -50,7 +50,7 @@ export const PasswordTile: React.FC = () => {
               <Attribute
                 description={intl.formatMessage(commonMessages.password)}
                 attributeValue="**************"
-                testingContext="passwordText"
+                data-test="passwordText"
               />
             )}
           </S.Content>

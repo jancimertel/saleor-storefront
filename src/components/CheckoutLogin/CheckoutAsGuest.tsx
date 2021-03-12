@@ -1,8 +1,9 @@
 import Link from "next/link";
 import React from "react";
+import { Button } from "react-bootstrap";
 import { FormattedMessage } from "react-intl";
 
-import { Button, OverlayTheme, OverlayType } from "..";
+import { OverlayTheme, OverlayType } from "..";
 import { OverlayContextInterface } from "../Overlay";
 
 const CheckoutAsGuest: React.FC<{
@@ -18,7 +19,7 @@ const CheckoutAsGuest: React.FC<{
     </p>
     <Link href={checkoutUrl}>
       <a>
-        <Button testingContext="continueAsGuestButton">
+        <Button data-test="continueAsGuestButton">
           <FormattedMessage defaultMessage="Continue as a guest" />
         </Button>
       </a>

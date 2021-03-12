@@ -1,6 +1,7 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 
-import { Button, ButtonLink } from "@components/atoms";
+import { ButtonLink } from "@components/atoms";
 
 import * as S from "./styles";
 import { IButtonProps, IProps } from "./types";
@@ -14,7 +15,7 @@ const renderCancelBtn = (cancelBtn?: IButtonProps) =>
   cancelBtn && (
     <ButtonLink
       {...getBtnAction(cancelBtn)}
-      testingContext="cancelButton"
+      data-test="cancelButton"
       type="button"
       color="secondary"
     >
@@ -29,7 +30,7 @@ const renderSubmitBtn = (
 ) =>
   submitBtn && (
     <Button
-      testingContext={submitBtn.testingContext}
+      data-test={submitBtn.testingContext}
       {...getBtnAction(submitBtn)}
       type={formId ? "submit" : "button"}
       form={formId}

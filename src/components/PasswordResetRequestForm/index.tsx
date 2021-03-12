@@ -1,10 +1,11 @@
 import * as React from "react";
+import { Button } from "react-bootstrap";
 import { FormattedMessage, useIntl } from "react-intl";
 
 import { paths } from "@paths";
 import { commonMessages } from "@temp/intl";
 
-import { Button, Form, TextField } from "..";
+import { Form, TextField } from "..";
 import { ResetPasswordRequest } from "./gqlTypes/ResetPasswordRequest";
 import { TypedPasswordResetRequestMutation } from "./queries";
 
@@ -53,7 +54,7 @@ const PasswordResetRequestForm: React.FC = () => {
               />
               <div className="password-reset-form__button">
                 <Button
-                  testingContext="submit"
+                  data-test="submit"
                   type="submit"
                   {...(disableSubmit(loading, data) && { disabled: true })}
                 >

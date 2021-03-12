@@ -1,12 +1,13 @@
 import * as React from "react";
 import { AlertManager, useAlert } from "react-alert";
+import { Button } from "react-bootstrap";
 import { IntlShape, useIntl } from "react-intl";
 
 import { paths } from "@paths";
 import { commonMessages } from "@temp/intl";
 
 import { maybe } from "../../../core/utils";
-import { Button, Form, TextField } from "../..";
+import { Form, TextField } from "../..";
 import { RegisterAccount } from "./gqlTypes/RegisterAccount";
 import { TypedAccountRegisterMutation } from "./queries";
 
@@ -68,7 +69,7 @@ const RegisterForm: React.FC<{ hide: () => void }> = ({ hide }) => {
             />
             <div className="login__content__button">
               <Button
-                testingContext="submitRegisterFormButton"
+                data-test="submitRegisterFormButton"
                 type="submit"
                 {...(loading && { disabled: true })}
               >

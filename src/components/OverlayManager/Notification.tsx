@@ -1,14 +1,15 @@
 import * as React from "react";
+import { Alert } from "react-bootstrap";
 
-import { Message, OverlayContextInterface } from "..";
+import { OverlayContextInterface } from "..";
 
 export const NotificationOverlay: React.FC<{
   overlay: OverlayContextInterface;
 }> = ({ overlay: { hide, context } }) => {
   return (
-    <Message title={context.title} status={context.status} onClose={hide}>
+    <Alert title={context.title} variant={context.status} onClose={hide}>
       {context.content}
-    </Message>
+    </Alert>
   );
 };
 

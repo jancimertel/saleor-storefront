@@ -16,7 +16,7 @@ import {
 const Password: React.FC<{ overlay: OverlayContextInterface }> = ({
   overlay,
 }) => (
-  <Overlay testingContext="passwordOverlay" context={overlay}>
+  <Overlay data-test="passwordOverlay" context={overlay}>
     <div className="password-reset">
       <Online>
         <div className="overlay__header">

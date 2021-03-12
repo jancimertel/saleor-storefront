@@ -6,7 +6,7 @@
 // GraphQL query operation: Collection
 // ====================================================
 
-import { MetadataItem } from "@temp/gql/collections";
+import { MetadataItem } from "@temp/gql/MetadataItem";
 
 export interface Collection_collection_backgroundImage {
   __typename: "Image";

@@ -47,7 +47,6 @@ const View: React.FC<NextPage> = () => {
                 <Page
                   loading={loading}
                   backgroundImage={data.collection?.backgroundImage}
-                  categories={data.categories}
                   shop={data.shop}
                 />
               </MetaWrapper>
